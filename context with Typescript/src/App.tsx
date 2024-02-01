@@ -1,24 +1,18 @@
-import React from 'react';
-import './App.css';
+// App.tsx
+import * as React from 'react'
+import TodoProvider from './context/TodoContext'
+import Todos from './containers/Todos'
+import AddTodo from './components/AddTodo'
+import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <TodoProvider>
+      <main className='App'>
+        <h1>My Todos</h1>
+        <AddTodo />
+        <Todos />
+      </main>
+    </TodoProvider>
+  )
 }
-
-export default App;
